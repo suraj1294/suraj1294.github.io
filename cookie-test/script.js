@@ -4,10 +4,8 @@ if (window.parent) {
     debugger;
 	if (/thirdparty=yes/.test(document.cookie)) {
 		window.parent.postMessage('MM:3PCsupported', '*');
+        window.parent.localStorage.setItem('MM:3PCsupported', "yes")
 	} else {
-       
 		window.parent.postMessage('MM:3PCunsupported', '*');
-        
 	}
-	document.cookie = 'thirdparty=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
  }
