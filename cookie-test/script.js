@@ -5,6 +5,9 @@ if (window.parent) {
 	if (/thirdparty=yes/.test(document.cookie)) {
 		window.parent.postMessage('MM:3PCsupported', '*');
 	} else {
+        var myCustomData = { foo: 'bar' }
+        var event1 = new CustomEvent('myEvent', { detail: myCustomData })
+        window.parent.document.dispatchEvent(event1)
 		window.parent.postMessage('MM:3PCunsupported', '*');
         
 	}
